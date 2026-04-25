@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwanda Chat</title>
+    <link rel="stylesheet" href="chat.css">
+    <script src="chat.js"></script>
+
+</head>
+<body>
+    <aside class="header" onclick="model_hide()">
+        <h1 id="kd_name">Kwanda Chat</h1>
+
+        <div class="explore">
+            <p id="explore">Explore Our Facilities</p>
+            <a href="#" target="_blank" id="exp">Kwanda SR Labs  <p id="ext-icon">➚</p></a>
+            <a href="#" target="_blank" id="exp">Kwanda GEN AI <p id="ext-icon">➚</p></a>
+            <a href="#" target="_blank" id="exp">Kwanda Ai Insititute <p id="ext-icon">➚</p></a>
+        </div>
+        <hr>
+
+        <div class="chats">
+            <p id="chats">🗨 All chats</p><hr>
+            <div id="chat_history">
+                <h4 id="hist">Solve vue problems in real world</h4>
+                <h4 id="hist">Hamed Hussein - The master developer</h4>
+                <h4 id="hist">More to know about Kwanda Modals</h4>
+                <h4 id="hist">Master javascript full course</h4>
+                <h4 id="hist">AI/Ml/DL mastery pathways</h4>
+                <h4 id="hist">Solve vue problems in real world</h4>
+            </div>
+        </div>
+        <div class="acc">
+
+            <h5 id="name">Hamed Hussein <p id="cat-usr">pro</p></h5>
+            
+            <span id="setting" onclick="hide_sett()">⚙ Settings</span>
+        </div>
+    </aside>
+    <div class="content" >
+
+        <select name="models" id="models">
+            <option value="1.0">Kwanda 1.0 lite </option>
+            <option value="smart">Kwanda 1.1 Smart  </option>
+            <option value="pro" selected>Kwanda 1.2 Pro </option>
+        </select>
+
+        <div id="results_area" onclick="model_hide()"></div>
+        <div id="chat_box" >
+            <span id="attach" onclick="show_hide()" >✚</span>
+            <textarea id="chat" onclick="model_hide()"></textarea>
+            <button type="submit" id="send" onclick="ask_respond()">⮩</button>
+        </div>
+        <div id="intro" onclick="model_hide()">
+            <h2 id="welcome">Bite Hamed,Ese wifuza ko duhera he?</h2>
+            <p id="suggestion">- Niteguye kugufasha kuvumbura byinshi. </p>
+        </div>
+
+        <div class="settings_option" id="sttngs" onclick="model_hide()">
+            <h4 id="cancel" onclick="hide_sett()">🗙</h4>
+            <aside id="sett_links">
+                <h2 class="_sett" id="acc_sett" onclick="_sett()" >Account Settings</h2>
+                <h2 class="_sett" id="usage_sett" onclick="_sett()">AI usage</h2>
+                <h2 class="_sett" id="data_sett" onclick="_sett()">Personal data</h2>
+                <h2 class="_sett" id="instru_sett" onclick="_sett()">Instructions</h2>
+                <h2 class="_sett" id="api_sett" onclick="_sett()">API</h2>
+                <h2 class="_sett" id="conn_sett" onclick="_sett()">Connectors</h2>
+                <h2 class="_sett" id="pay_sett" onclick="_sett()">Payment</h2>
+                <h2 class="_sett" id="news_sett" onclick="_sett()">Latest News</h2>
+            </aside>
+            <div id="sett_content">
+                <div id="acc_opt">
+                    <div id="set-det">
+                    <h2 id="st">Name : Hamed Hussein</h2>
+                    <h2 id="st">Email : <small>hamussein01@gmail.com</small></h2>
+                    <h2 id="st">Birthdate : March/05/2008</h2>
+                    <h2 id="st">Gender : Male</h2>
+                    </div>
+                    <img src="/hamedai.jpg" alt="Personal image" height="300" width="300">
+                    
+                </div>
+                <div id="usage_opt">
+                    <span id="graph">🗠 <p id="ai-usg">This is a report of montly usage analytics of Kwanda Modals <br> Observe the following tables and graphs to understand more </p></span>
+                    <div id="usg-tb">
+                        <table>
+                            <tr><th>Task</th><th>Usage rate</th></tr>
+                            <tr><td>Responding to 20 Question</td><td>64%</td></tr>
+                            <tr><td>Google Connector Usage</td><td>38%</td></tr>
+                            <tr><td>Generating 4 images</td><td>67%</td></tr>
+                        </table>
+                        <h4 id="md-usg">Kwanda 1.0 lite </h4>
+                        <h2>🗠 54%</h2>
+                        <h4 id="md-usg">Kwanda 1.1 Smart </h4>
+                        <h2>🗠 86%</h2>
+                        <h4 id="md-usg">Kwanda 1.2 Pro </h4>
+                        <h2>🗠 21%</h2>
+                      
+                    </div>
+                </div>
+
+                <div id="data_opt">
+                    <h2 id="dt">You can download your Personal data here</h2>
+                    <div id="down">
+                        <label for="data">Download pdf file</label>
+                        <a href="/media/hamedpro/Hamedpro_s/hamedpro/docs/" id="data" target="_blank">User data</a>
+                    </div>
+                    <h2 id="control">control your data usage by AI model</h2>
+                    Low <input type="range"  id="usg"> High
+
+                    <div id="usg-dt">
+                        <p>This is the data that the modal will use<br> while responding and interacting to you.</p>
+                    </div>
+                    <div class="wrn">
+                        <h2>⚠ Your peronal data are not accessed by the model</h2>
+                        <p id="wrn-det">You Personal data namely ; your name , age , location and personal details  <br>are secret and usage of it by us is violance of your rigths</p>
+                    </div>
+                </div>
+
+                <div id="instru_opt">
+                    <h2 id="intrs">You add Custom instruction Here</h2>
+                    <form  id="rules">
+                        <label for="tone">What reponses do you want?</label><br>
+                        <input type="checkbox" name="tn" >Detailed
+                        <input type="checkbox" name="tn" >Overview
+                        <input type="checkbox" name="tn" >Summarised
+                        <div id="add">
+                            <h2>Add Custom Instructions</h2>
+                            <textarea id="txt-instru"></textarea><br>
+                            <button type="button" id="instru-btn">Add</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="api_opt">
+                    <div id="gen_api">
+                        <p id="ap-k">No API keys generated</p>
+                        <h2 id="gen-key" style="cursor: pointer;">Generate a new API key ✚</h2>
+                        <div class="gen">
+                            <p id="ky">genarated key 🗝 : </p>
+                            <p id="ket-gen">
+                        km-250JKgdg&63gtynb3845
+                            </p>
+                            <p id="copy" style="cursor: pointer;">Copy 🗊</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="conn_opt">
+
+                    <div class="connect">
+                        <form id="search-conn">
+                            <input type="search" id="srch" placeholder="search Connectors">
+                        </form>
+                        <p id="av-conn">Available Connectors</p>
+                        <div class="av-conn">
+                            <div id="con-ec">
+                                <p><h1>Google</h1>Gmail and drive</p>
+                            </div>
+                             <div id="con-ec">
+                                <p><h1>Github</h1>Manage your software</p>
+                            </div>
+                             <div id="con-ec">
+                                <p><h1>Figma</h1>Make the design work for you</p>
+                            </div>
+                             <div id="con-ec">
+                                <p><h1>HAHU NLP</h1>Control your Ai Voice Agent</p>
+                            </div>
+                            <div id="con-ec">
+                                <p><h1>Lovable</h1>Build your Vibe coded softwares.</p>
+                            </div>
+                            <div id="con-ec">
+                                <p><h1>Broswer</h1>Let Agent Control your browser</p>
+                            </div>
+                            <div id="con-ec">
+                                <p><h1>Amazon</h1>Let the agent shop for you.</p>
+                            </div>
+                            <div id="con-ec">
+                                <p><h1>Binance</h1>Control your finance with Our agents</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="pay_opt">
+                    <div class="pay-ser">
+                    <h3 id="pay">Pay for Our Services here</h3>
+                    <div class="price-pay">
+                        <div class="md">
+                            <h2>Lite <br>14,000 Rwf</h2>
+                            <p>Included</p><hr>
+                            <p>• Lite Model </p>
+                            <p>• Daily Limits</p>
+                            <p>• Quick Responds</p>
+                            <p>• montly usage </p>
+                            <h3 id="p-a-y">Pay Now</h3>
+                        </div>
+                          <div class="md">
+                            <h2>Smart <br>50,000 Rwf</h2>
+                            <p>Included</p><hr>
+                            <p>• Fastest Model </p>
+                            <p>• Limited Agent usage </p>
+                            <p>• Unlimited Chats</p>
+                            <p>• All in Lite</p>
+                            <h3 id="p-a-y">Pay Now</h3>
+                        </div>
+                          <div class="md">
+                            <h2>Pro <br>100,000 Rwf</h2>
+                            <p>Included</p><hr>
+                            <p>• All in Smart</p>
+                            <p>• Think Longer </p>
+                            <p>• No Daily Limits</p>
+                            <p>• Agent Usage</p>
+                            <h3 id="p-a-y">Pay Now</h3>
+                        </div>
+                    </div>
+
+                    <div id="payme">
+                        <div class="py-ser">
+                            <h2>Using Paypal</h2>
+                            <p>Pay securely with paypal Payments</p>
+                        </div>
+
+                        <div class="py-ser">
+                            <h2>Using Binance</h2>
+                            <p>Pay securely with Bitcoins and Crypto Currency</p>
+                        </div>
+                        <div class="py-ser">
+                            <h2>Using MTN</h2>
+                            <p>Pay with MOMO pay easily using Mobile Money</p>
+                        </div>
+
+                        <div class="py-ser">
+                            <h2>Using Mpesa</h2>
+                            <p>Pay with African wallet Mpesa Cash</p>
+                        </div>
+
+                       
+                    </div>
+                    </div>
+                </div>
+
+                <div id="new_opt">
+                    <div class="news">
+                        <h2>Read Our Latest News Here!</h2>
+                        <div class="n-e-w-s">
+                            <h3>New modal released <br><h1>Kwanda 1.2 Pro</h1></h3>
+                            <p>what's new ? <br>
+                            <h3>• Fastest Responds</h3>
+                            <h3>• High Natural Language Processing Capacity</h3>
+                            <h3>• Automated Speech recognition</h3>
+                            <h3>• Agent Contorl with high Accuracy</h3>
+                            </p>
+                            <div class="e-x-p">
+                                <div class="explore">
+                                    <p id="explore">Explore Our Facilities</p>
+                                    <a href="#" id="exp">Kwanda SR Labs  <p id="ext-icon">➚</p></a>
+                                    <a href="#" id="exp">Kwanda GEN AI <p id="ext-icon">➚</p></a>
+                                    <a href="#" id="exp">Kwanda Ai Insititute <p id="ext-icon">➚</p></a>
+                                </div>
+                                <div id="CEO">
+                                    <h2 id="chm">CEO&Founder <br>
+                                     <h3>Hamed Hussein</h3></h2>
+                                    <h2 id="career">Short Bio <br>
+                                    <h5>At 18 Hamed Hussein trained an Ai modal Called KWanda Modals, Now it is what you are using daily.Now He is A Machine Learning and Ai Engineer. </h5></h2>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div id="attach_box">
+            <h3 id="img"  onclick="">🖼 Upload an Image</h3>
+            <h3 id="file" onclick="">🖹 Upload a document file</h3>
+            <h3 id="audio" onclick="">🎜 Upload an audio file</h3>
+            <h3 id="conn"  onclick="conn()">✒ Add Connectors</h3>
+            <div id="change_model">
+                <p id="change">Change the current model</p>
+                <h4 id="1.0">Kwanda 1.0 lite</h4>
+                <h4 id="smart">Kwanda 1.1 Smart</h4>
+                <h4 id="pro">Kwanda 1.2 Pro</h4>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
