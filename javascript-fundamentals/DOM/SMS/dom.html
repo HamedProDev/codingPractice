@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS</title>
+    <link rel="stylesheet" href="dom.css">
+</head>
+<body>
+    <script src="dom.js"></script>
+    <div class="container">
+        <h1 id="txt">
+            School Management System
+        </h1>
+
+        <p id="intro">
+            Please Enter your marks to see the grade
+        </p>
+
+        <form>
+            <input type="text" id="name" placeholder="Please Enter your name !" required>
+            <input type="number" id="marks" placeholder="Please Enter your marks !" required>
+        </form>
+        <input type="button" value="Check grade" onclick="check_grade()">
+        <p id="msg"></p>
+
+    </div>
+</body>
+</html>

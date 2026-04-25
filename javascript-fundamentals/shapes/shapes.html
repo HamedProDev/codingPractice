@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shape Generator</title>
+<style>
+    body {
+        font-family: monospace;
+        text-align: center;
+        background: #0f172a;
+        color: white;
+    }
+
+    .grid {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .cell {
+        width: 30px;
+        height: 30px;
+        margin: 2px;
+        background: #1e293b;
+    }
+
+    .active {
+        background: #22c55e; /* green */
+    }
+
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        background: #22c55e;
+        color: black;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h2>Shape Generator</h2>
+
+<button onclick="draw('checkerboard')">Checkerboard</button>
+<button onclick="draw('diamond')">Diamond</button>
+
+<div id="grid" class="grid"></div>
+
+<script>
+// 🔥 Custom range (like Python)
+function range(n) {
+    return [...Array(n).keys()];
+}
+
+function generateShape(n, shape) {
+    let grid = range(n).map(() => range(n).map(() => 0));
+
+    if (shape === "checkerboard") {
+        range(n).forEach(i => {
+            range(n).forEach(j => {
+                grid[i][j] = (i + j) % 2;
+            });
+        });
+
+    } else if (shape === "diamond") {
+        let mid = Math.floor(n / 2);
+
+        range(n).forEach(i => {
+            range(n).forEach(j => {
+                if (Math.abs(i - mid) + Math.abs(j - mid) <= mid) {
+                    grid[i][j] = 1;
+                }
+            });
+        });
+    }
+
+    return grid;
+}
+
+function draw(shape) {
+    let n = 9; // change size here
+    let gridData = generateShape(n, shape);
+    let container = document.getElementById("grid");
+
+    container.innerHTML = "";
+
+    gridData.forEach(row => {
+        let rowDiv = document.createElement("div");
+        rowDiv.className = "row";
+
+        row.forEach(cell => {
+            let cellDiv = document.createElement("div");
+            cellDiv.className = "cell";
+
+            if (cell === 1) {
+                cellDiv.classList.add("active");
+            }
+
+            rowDiv.appendChild(cellDiv);
+        });
+
+        container.appendChild(rowDiv);
+    });
+}
+
+// default draw
+draw("diamond");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+</head>
+<body>
+    <ul>
+        <li>first child</li>
+        <li>second child</li>
+        <li>last child</li>
+    </ul>
+    <h2>Let's change this with js</h2>
+    <button style="background-color: mediumpurple; color: #fff;font-size: 20px; cursor: pointer;">CLick me</button>
+
+
+    <script>
+        let firs = document.body.style.backgroundColor = 'lightblue';
+        let ul = document.querySelector('ul').children;
+
+        for(child of ul){
+            child.style.backgroundColor = 'green'
+            child.style.padding = '1em'
+            child.style.textAlign = 'center'
+            child.style.margin = '.3em'
+            child.style.borderRadius = '10px'
+        }
+
+        allKids = document.body.childNodes;
+        allKids[3].style.backgroundColor = 'blue';
+        allKids[3].style.transition = '1s'
+
+        console.log(allKids);
+
+        const btn = document.querySelector('button');
+
+
+        btn.addEventListener('click', ()=>{
+            allKids[3].style.backgroundColor = 'red';
+        })
+        
+
+
+
+    </script>
+    
+</body>
+</html>

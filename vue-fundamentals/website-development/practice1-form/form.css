@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+body{
+    justify-content: center;
+    display: flex;
+
+}
+
+.form{
+    background-color: rgba(11, 162, 11, 0.541);
+    margin-top: 5em;
+    box-shadow: 2px 3px 20px green;
+    padding: 3em;
+    border-radius: .4em;
+    width: 55%;
+    height: 390px;
+}
+
+#frm-elmt{
+    margin: 1.9em 0em;
+}
+
+input[type='text']{
+    margin-right:  3em;
+
+}
+
+input{
+    outline: none;
+    height:1.5em;
+    padding: .5em;
+    border-radius: .5em;
+    border: 1px solid green;
+}
+
+#subject,#msg,#password{
+    width: 86%;
+}
+
+button[type='submit']{
+    background-color: green;
+    padding: .5em;
+    border-radius: .4em;
+    border: none;
+    box-shadow: 3px 4px 10px green;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+
+}
+button[type='submit']:hover{
+    background-color: rgba(7, 86, 7, 0.895);
+}
+
+input[type='email']{
+    width: 35%;
+}
+#updated{
+    position: absolute;
+    top: 0;
+    left: 45%;
+}
+
+h2{
+    text-align: center;
+}
+
+small{
+    color: green;
+}
+anitha{
+    color: black;
+}
+textarea{
+    border-radius: .5em;
+    padding: .5em;
+    outline: 1px solid green;
+    height: 100px;
+}

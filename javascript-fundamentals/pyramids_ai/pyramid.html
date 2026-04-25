@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyramids</title>
+</head>
+<body>
+    <script>
+function print(line = '') {
+    document.write(line + '<br>');
+}
+
+// 1. Increasing Triangle
+function increasingTriangle(n) {
+    for (let i = 1; i <= n; i++) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row += '*';
+        }
+        print(row);
+    }
+}
+  
+// 2. Decreasing Triangle
+function decreasingTriangle(n) {
+    for (let i = n; i >= 1; i--) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row += '*';
+        }
+        print(row);
+    }
+}
+
+// 3. Pyramid
+function pyramid(n) {
+    for (let i = 1; i <= n; i++) {
+        let spaces = ' '.repeat(n - i);
+        let stars = '*'.repeat(2 * i - 1);
+        print(spaces + stars);
+    }
+}
+
+// 4. Inverted Pyramid
+function invertedPyramid(n) {
+    for (let i = n; i >= 1; i--) {
+        let spaces = ' '.repeat(n - i);
+        let stars = '*'.repeat(2 * i - 1);
+        print(spaces + stars);
+    }
+}
+
+
+// RUN ALL
+document.write('<pre>');
+
+increasingTriangle(10);
+print();
+
+decreasingTriangle(10);
+print();
+
+pyramid(10);
+print();
+
+invertedPyramid(10);
+
+</script>
+    
+</body>
+</html>

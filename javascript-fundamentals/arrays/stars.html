@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function printGrid(grid) {
+    document.write('<pre>');
+    for (let row of grid) {
+        document.write(row.join('') + '<br>');
+    }
+}
+
+// 1. Increasing Triangle
+function increasingTriangle(n) {
+    let grid = [];
+
+    for (let i = 1; i <= n; i++) {
+        let row = [];
+        for (let j = 1; j <= i; j++) {
+            row.push('*');
+        }
+        grid.push(row);
+    }
+
+    return grid;
+}
+
+// 2. Decreasing Triangle
+function decreasingTriangle(n) {
+    let grid = [];
+
+    for (let i = n; i >= 1; i--) {
+        let row = [];
+        for (let j = 1; j <= i; j++) {
+            row.push('*');
+        }
+        grid.push(row);
+    }
+
+    return grid;
+}
+
+// 3. Pyramid
+function pyramid(n) {
+    let grid = [];
+
+    for (let i = 1; i <= n; i++) {
+        let row = [];
+
+        // spaces
+        for (let s = 0; s < n - i; s++) {
+            row.push(' ');
+        }
+
+        // stars
+        for (let j = 0; j < 2 * i - 1; j++) {
+            row.push('*');
+        }
+
+        grid.push(row);
+    }
+
+    return grid;
+}
+
+// 4. Inverted Pyramid
+function invertedPyramid(n) {
+    let grid = [];
+
+    for (let i = n; i >= 1; i--) {
+        let row = [];
+
+        // spaces
+        for (let s = 0; s < n - i; s++) {
+            row.push(' ');
+        }
+
+        // stars
+        for (let j = 0; j < 2 * i - 1; j++) {
+            row.push('*');
+        }
+
+        grid.push(row);
+    }
+
+    return grid;
+}
+
+
+// RUN
+printGrid(increasingTriangle(10));
+document.write('<br>');
+
+printGrid(decreasingTriangle(10));
+document.write('<br>');
+
+printGrid(pyramid(10));
+document.write('<br>');
+
+printGrid(invertedPyramid(10));
+
+</script>
+    
+</body>
+</html>

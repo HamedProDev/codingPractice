@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shape Generator</title>
+<style>
+    body {
+        font-family: monospace;
+        text-align: center;
+        background: #0f172a;
+        color: white;
+    }
+
+    .grid {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .cell {
+        width: 30px;
+        height: 30px;
+        margin: 2px;
+        background: #1e293b;
+    }
+
+    .active {
+        background: #22c55e;
+    }
+
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        background: #22c55e;
+        color: black;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h2>Shape Generator</h2>
+
+<button onclick="draw('checkerboard')">Checkerboard</button>
+<button onclick="draw('diamond')">Diamond</button>
+
+<div id="grid" class="grid"></div>
+
+<script>
+function generateShape(n, shape) {
+    let grid = [];
+
+    // create empty grid
+    for (let i = 0; i < n; i++) {
+        grid[i] = [];
+        for (let j = 0; j < n; j++) {
+            grid[i][j] = 0;
+        }
+    }
+
+    if (shape === "checkerboard") {
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < n; j++) {
+                grid[i][j] = (i + j) % 2;
+            }
+        }
+
+    } else if (shape === "diamond") {
+        let mid = Math.floor(n / 2);
+
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < n; j++) {
+                if (Math.abs(i - mid) + Math.abs(j - mid) <= mid) {
+                    grid[i][j] = 1;
+                }
+            }
+        }
+    }
+
+    return grid;
+}
+
+function draw(shape) {
+    let n = 9;
+    let gridData = generateShape(n, shape);
+    let container = document.getElementById("grid");
+
+    container.innerHTML = "";
+
+    for (let i = 0; i < gridData.length; i++) {
+        let rowDiv = document.createElement("div");
+        rowDiv.className = "row";
+
+        for (let j = 0; j < gridData[i].length; j++) {
+            let cellDiv = document.createElement("div");
+            cellDiv.className = "cell";
+
+            if (gridData[i][j] === 1) {
+                cellDiv.classList.add("active");
+            }
+
+            rowDiv.appendChild(cellDiv);
+        }
+
+        container.appendChild(rowDiv);
+    }
+}
+
+// default
+draw("diamond");
+</script>
+
+</body>
+</html>

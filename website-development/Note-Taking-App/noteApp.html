@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteApp</title>
+    <link rel="stylesheet" href="Notes.css" >
+</head>
+<body>
+    <script src="Notes.js"></script>
+
+    <aside class="nav">
+        <div class="intro">
+            <h1 id="name">NoteApp</h1>
+        </div>
+        <div class="Add">
+            <p id="notes">your notes will appear below here</p>
+            <div class="added-notes">
+
+            </div>
+        </div>
+        <div class="footer">
+            <p id="end">NoteApp v1.0</p>
+        </div>
+    </aside>
+
+    <div class="content">
+
+        <div class="txt">
+            <h2 id="txt">Start by Creating a New Note</h2>
+        </div>
+
+        <div id="notes-added">
+            <p id="taken">Notes will appear here</p>
+            
+        </div>
+
+        <div class="New"  onclick="show_note_detail()">
+            <h4 id="New" onclick="show_note_detail()">New</h4>
+        </div>
+    </div>
+
+    <div class="create" id="create">
+
+        <form id="note-details">
+
+            <div class="title">
+                <label for="title">Title</label><br>
+                <input type="text" placeholder="The notes title ..." id="title">
+            </div>
+
+            <div class="note-content">
+                <label for="content">Content</label><br>
+                <textarea name="content" id="note-content"></textarea>
+            </div>
+            <div class="actions">
+                <input type="file" > <input type="button" value="CANCEl" id="btn-cancel" onclick="hide_note_detail()"> <input type="button" value="ADD NOTE" id="btn-add" onclick="create_notes()">
+            </div>
+            
+        </form>
+
+    </div>
+    
+</body>
+</html>
